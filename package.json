@@ -1,0 +1,31 @@
+{
+  "main": "index.js",
+  "scripts": {
+    "build-array": "babel -w src/array.js -o array/index.js",
+    "build-date": "babel -w src/date.js -o date/index.js",
+    "build-object": "babel -w src/object.js -o object/index.js",
+    "build-string": "babel -w src/string.js -o string/index.js",
+    "build-util": "babel -w src/util.js -o util/index.js",
+    "build-index": "babel -w src/index.js -o index.js",
+    "start": "npm run build-index | npm run build-array | npm run build-date | npm run build-object | npm run build-string | npm run build-util"
+  },
+  "devDependencies": {
+    "babel-core": "*",
+    "babel-preset-es2015": "*"
+  },
+  "babel": {
+    "presets": [
+      "es2015"
+    ]
+  },
+  "eslintConfig": {
+    "ecmaFeatures": {
+      "modules": true
+    },
+    "env": {
+      "browser": true,
+      "node": true,
+      "es6": true
+    }
+  }
+}
